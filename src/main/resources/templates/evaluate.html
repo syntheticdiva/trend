@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Trend Evaluation</title>
+    <link rel="stylesheet" th:href="@{/styles.css}">
+</head>
+<body>
+<div class="container">
+    <h1>Оценка тенденций</h1>
+
+    <div class="trend">
+        <h2>Тендеция 1</h2>
+        <h3>Стабильные точки</h3>
+        <ul>
+            <li th:each="point : ${stableTrend1Points}">
+                <span th:text="${point}"></span>
+            </li>
+        </ul>
+        <h3>Нестабильные точки</h3>
+        <ul>
+            <li th:each="point : ${unstableTrend1Points}">
+                <span th:text="${point}" class="unstable-point"></span>
+            </li>
+        </ul>
+    </div>
+
+    <div class="trend">
+        <h2>Тенденция 2</h2>
+        <h3>Стабильные точки</h3>
+        <ul>
+            <li th:each="point : ${stableTrend2Points}">
+                <span th:text="${point}"></span>
+            </li>
+        </ul>
+        <h3>Нестабильные точки</h3>
+        <ul>
+            <li th:each="point : ${unstableTrend2Points}">
+                <span th:text="${point}" class="unstable-point"></span>
+            </li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>
